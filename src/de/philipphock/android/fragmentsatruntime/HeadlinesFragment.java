@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.ListFragment;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -36,9 +37,9 @@ public class HeadlinesFragment extends ListFragment {
 
         // When in two-pane layout, set the listview to highlight the selected list item
         // (We do this during onStart because at the point the listview is available.)
-//        if (getFragmentManager().findFragmentById(R.id.article_fragment) != null) {
-//            getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
-//        }
+        if (getFragmentManager().findFragmentById(R.id.article_fragment) != null) {
+            getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+        }
     }
 
     @Override
@@ -57,6 +58,7 @@ public class HeadlinesFragment extends ListFragment {
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
+    	Log.d(getClass().getName(),"callback "+mCallback);
         // Notify the parent activity of selected item
         mCallback.onArticleSelected(position);
         

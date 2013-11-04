@@ -3,6 +3,7 @@ package de.philipphock.android.fragmentsatruntime;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,7 +47,9 @@ public class ArticleFragment extends Fragment {
     }
 
     public void updateArticleView(int position) {
-        TextView article = (TextView) getActivity().findViewById(R.id.article);
+        TextView article = (TextView) getActivity().findViewById(R.id.articleText);
+        
+        Log.d(getClass().getName(),article+"");
         article.setText(Ipsum.Articles[position]);
         mCurrentPosition = position;
     }

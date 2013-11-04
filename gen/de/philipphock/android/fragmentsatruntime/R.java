@@ -25,7 +25,7 @@ public final class R {
     }
     public static final class id {
         public static final int action_settings=0x7f080004;
-        public static final int article=0x7f080003;
+        public static final int articleText=0x7f080003;
         public static final int article_fragment=0x7f080002;
         public static final int fragment_container=0x7f080000;
         public static final int headlines_fragment=0x7f080001;
